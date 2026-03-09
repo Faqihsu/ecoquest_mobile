@@ -8,8 +8,8 @@ export const MWA_CONFIG = {
   appIdentity: {
     name: 'EcoQuest',
     uri: 'https://ecoquest.app',
-    // Icon must be an absolute URL for MWA verification.
-    icon: 'https://ecoquest.app/icon.png',
+    // MWA spec: icon MUST be a relative URI (relative to the uri above)
+    icon: '/icon.png',
   },
 
   /** Auth token expiry — 24h */
