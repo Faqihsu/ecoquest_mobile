@@ -1,0 +1,49 @@
+# .easignore
+# EcoQuest Mobile — EAS Build Upload Exclusions
+#
+# Files listed here are NOT uploaded to EAS Build servers.
+# This reduces upload size and protects sensitive local files.
+
+# ── Development / Local Only ──────────────────────────────────────────────────
+.expo/
+node_modules/
+# Managed workflow: EAS builds android/ from scratch via expo prebuild
+/android
+/ios
+
+# ── Test & Dev Files ─────────────────────────────────────────────────────────
+**/__tests__/
+**/*.test.ts
+**/*.test.tsx
+**/*.spec.ts
+**/*.spec.tsx
+**/*.stories.tsx
+
+# ── Local Secrets (NEVER upload) ─────────────────────────────────────────────
+.env
+.env.local
+.env.*.local
+google-service-account.json
+*.keystore
+*.p12
+*.pem
+*.key
+
+# ── Build Artifacts ───────────────────────────────────────────────────────────
+dist/
+build/
+*.apk
+*.aab
+*.ipa
+
+# ── IDE / OS ──────────────────────────────────────────────────────────────────
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# ── Logs ──────────────────────────────────────────────────────────────────────
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*

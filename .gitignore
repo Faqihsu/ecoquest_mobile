@@ -1,0 +1,42 @@
+.anchor
+.DS_Store
+target
+**/*.rs.bk
+node_modules
+test-ledger
+.yarn
+.expo/
+
+# Environment variables — JANGAN commit ke Git!
+.env
+.env.local
+mobile/.env
+mobile/.env.local
+
+# Build artifacts
+mobile/android/
+mobile/ios/
+*.apk
+*.aab
+*.keystore
+
+# IDE
+.idea/
+*.swp
+*.swo
+
+# Expo
+mobile/.expo/
+
+# Cargo build
+target/
+
+# OS files
+Thumbs.db
+.DS_Store
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*

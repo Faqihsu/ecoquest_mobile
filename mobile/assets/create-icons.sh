@@ -1,0 +1,16 @@
+#!/bin/bash
+# Create 1x1 transparent PNG files as placeholders
+# Use imagemagick or simple approach
+
+# Create simple PNG header for 1x1 transparent image
+create_png() {
+  local file=$1
+  # 1x1 transparent PNG (minimal valid PNG)
+  printf '\x89\x50\x4E\x47\x0D\x0A\x1A\x0A\x00\x00\x00\x0D\x49\x48\x44\x52\x00\x00\x00\x01\x00\x00\x00\x01\x08\x06\x00\x00\x00\x1F\x15\xC4\x89\x00\x00\x00\x0A\x49\x44\x41\x54\x78\x9C\x63\x00\x01\x00\x00\x05\x00\x01\x0D\x0A\x2D\xB4\x00\x00\x00\x00\x49\x45\x4E\x44\xAE\x42\x60\x82' > "$file"
+}
+
+create_png "icon.png"
+create_png "splash.png"
+create_png "adaptive-icon.png"
+create_png "favicon.png"
+echo "✅ Created placeholder asset files"

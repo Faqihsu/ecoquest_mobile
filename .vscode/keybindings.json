@@ -1,0 +1,22 @@
+[
+  {
+    "key": "ctrl+alt+a",
+    "command": "antigravity.openPanel",
+    "when": "antigravity.enabled"
+  },
+  {
+    "key": "ctrl+shift+a",
+    "command": "antigravity.codeWithAgent",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+alt+i",
+    "command": "antigravity.editCodeInline",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+alt+e",
+    "command": "antigravity.agentManager",
+    "when": "antigravity.enabled"
+  }
+]

@@ -1,0 +1,16 @@
+#!/bin/sh
+# .husky/pre-commit — Block commits with lint/type errors
+. "$(dirname "$0")/_/husky.sh"
+
+echo "🌿 EcoQuest pre-commit checks..."
+
+cd mobile
+
+# 1. Run lint-staged (ESLint + Prettier on changed files only)
+npx lint-staged
+
+# 2. TypeScript type check (full project)
+echo "⚡ TypeScript check..."
+npx tsc --noEmit --project tsconfig.json
+
+echo "✅ All checks passed! Committing..."

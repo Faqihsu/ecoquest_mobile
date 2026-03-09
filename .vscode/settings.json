@@ -1,0 +1,33 @@
+{
+  // Antigravity AI Configuration
+  "antigravity.enabled": true,
+  "antigravity.autoActivate": true,
+  "antigravity.modelProvider": "claude",
+  "antigravity.defaultModel": "claude-3-5-sonnet-20241022",
+
+  // Project Context
+  "antigravity.contextPaths": [
+    "mobile/src",
+    "programs/ecoquest_mobile/src",
+    "mobile/src/services",
+    "mobile/src/screens"
+  ],
+
+  // Antigravity Cockpit Settings
+  "antigravity-cockpit.enableQuotaMonitor": true,
+  "antigravity-cockpit.refreshInterval": 60000,
+  "antigravity-cockpit.showNotifications": true,
+
+  // General VS Code Settings
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[rust]": {
+    "editor.defaultFormatter": "rust-analyzer"
+  }
+}

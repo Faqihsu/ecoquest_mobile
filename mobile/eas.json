@@ -1,0 +1,76 @@
+{
+  "cli": {
+    "version": ">= 10.0.0",
+    "appVersionSource": "remote"
+  },
+  "build": {
+    "base": {
+      "node": "20.11.0",
+      "env": {
+        "EXPO_PUBLIC_SOLANA_CLUSTER": "devnet",
+        "EXPO_PUBLIC_HELIUS_API_KEY": "1fc6109d-af31-4fda-88c7-9d318f62f688",
+        "EXPO_PUBLIC_PROGRAM_ID": "4RoEXMwC3pvm1NYb8oXvcezJzsvxZmCwMgNUKZxCnju5",
+        "EXPO_PUBLIC_SKR_MINT": "2BcXV1FfbTpVGRi6h3ehxjPSHS1fyJDMmrw6DwDKU4ep",
+        "EXPO_PUBLIC_ADMIN_WALLET": "FVKMmRwKW2HJmFehFqF5LsQQAMjgJW4ywnbD8e6uVEGY",
+        "PINATA_API_KEY": "4cacbfbe98a5a50886a3",
+        "PINATA_SECRET_KEY": "23e4a3d37f60cf7bfa5e9b1b102ca8b7588560a6d1e8b69af60a97aa8084c0b0"
+      }
+    },
+
+    "development": {
+      "extends": "base",
+      "developmentClient": true,
+      "distribution": "internal",
+      "prebuildCommand": "npx expo prebuild --clean",
+      "android": {
+        "buildType": "apk",
+        "gradleCommand": ":app:assembleDebug"
+      },
+      "env": {
+        "EXPO_PUBLIC_SOLANA_CLUSTER": "devnet"
+      }
+    },
+
+    "preview": {
+      "extends": "base",
+      "developmentClient": false,
+      "distribution": "internal",
+      "prebuildCommand": "npx expo prebuild --clean",
+      "android": {
+        "buildType": "apk",
+        "gradleCommand": ":app:assembleRelease"
+      },
+      "env": {
+        "EXPO_PUBLIC_SOLANA_CLUSTER": "devnet"
+      }
+    },
+
+    "store": {
+      "extends": "base",
+      "distribution": "store",
+      "prebuildCommand": "npx expo prebuild --clean",
+      "android": {
+        "buildType": "app-bundle",
+        "gradleCommand": ":app:bundleRelease",
+        "autoIncrement": "version"
+      },
+      "env": {
+        "EXPO_PUBLIC_SOLANA_CLUSTER": "mainnet-beta"
+      }
+    },
+
+    "production": {
+      "extends": "store",
+      "channel": "production"
+    }
+  },
+
+  "submit": {
+    "production": {
+      "android": {
+        "serviceAccountKeyPath": "./google-service-account.json",
+        "track": "internal"
+      }
+    }
+  }
+}

@@ -1,0 +1,141 @@
+{
+  "expo": {
+    "name": "EcoQuest Mobile",
+    "slug": "ecoquest-mobile",
+    "scheme": "ecoquest",
+    "version": "1.0.0",
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "dark",
+    "jsEngine": "hermes",
+    "splash": {
+      "image": "./assets/logo-source.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#030712"
+    },
+    "assetBundlePatterns": [
+      "assets/**",
+      "src/**"
+    ],
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "com.ecoquest.mobile",
+      "infoPlist": {
+        "NSCameraUsageDescription": "EcoQuest uses your camera to capture real-time photographic proof of your eco-activities. Photos are cryptographically timestamped and uploaded to decentralized storage to verify quest completion on the Solana blockchain.",
+        "NSLocationWhenInUseUsageDescription": "EcoQuest uses your precise GPS location to verify that you are physically present at the quest site. Location data is hashed and stored on-chain — your exact coordinates are never shared with third parties.",
+        "NSLocationAlwaysAndWhenInUseUsageDescription": "EcoQuest requires location access to validate eco-activity quests in real time. Your location is only used during active quest sessions."
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#050810"
+      },
+      "package": "com.ecoquest.mobile",
+      "versionCode": 1,
+      "permissions": [
+        "android.permission.ACCESS_FINE_LOCATION",
+        "android.permission.CAMERA",
+        "android.permission.INTERNET",
+        "android.permission.ACCESS_NETWORK_STATE",
+        "android.permission.ACCESS_COARSE_LOCATION"
+      ],
+      "blockedPermissions": [
+        "android.permission.ACCESS_COARSE_LOCATION",
+        "android.permission.RECORD_AUDIO",
+        "android.permission.READ_EXTERNAL_STORAGE",
+        "android.permission.WRITE_EXTERNAL_STORAGE",
+        "android.permission.READ_MEDIA_IMAGES"
+      ],
+      "allowBackup": false,
+      "config": {
+        "googleMaps": {
+          "apiKey": "AIzaSyB5oIsE3upFD1i5SC-El_CBN6_rtvF651A"
+        }
+      },
+      "intentFilters": [
+        {
+          "action": "VIEW",
+          "autoVerify": true,
+          "data": [
+            {
+              "scheme": "https",
+              "host": "ecoquest.app",
+              "pathPrefix": "/quest"
+            }
+          ],
+          "category": [
+            "BROWSABLE",
+            "DEFAULT"
+          ]
+        },
+        {
+          "action": "VIEW",
+          "data": [
+            {
+              "scheme": "ecoquest"
+            }
+          ],
+          "category": [
+            "BROWSABLE",
+            "DEFAULT"
+          ]
+        }
+      ]
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      [
+        "expo-location",
+        {
+          "locationWhenInUsePermission": "EcoQuest uses your precise GPS location to verify that you are physically present at an eco-activity quest site. Your exact coordinates are cryptographically hashed — they are never stored in plaintext or shared with third parties.",
+          "locationAlwaysAndWhenInUsePermission": "EcoQuest requires location access during active quest sessions to validate eco-activities on the Solana blockchain.",
+          "isIosBackgroundLocationEnabled": false,
+          "isAndroidBackgroundLocationEnabled": false
+        }
+      ],
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "EcoQuest uses your camera exclusively to capture real-time photographic proof of eco-activities. The app cannot access your photo library — only live camera captures are permitted. Photos are cryptographically signed and uploaded to decentralized storage (IPFS/Arweave).",
+          "microphonePermission": false,
+          "recordAudioAndroid": false
+        }
+      ],
+      "./plugins/withAndroidManifest",
+      "./plugins/withProguardConfig",
+      "./plugins/withSeekerOptimization",
+      "expo-secure-store",
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "EcoQuest menggunakan galeri foto untuk mengatur foto profil Anda.",
+          "cameraPermission": "EcoQuest menggunakan kamera untuk mengambil foto profil Anda.",
+          "microphonePermission": false
+        }
+      ]
+    ],
+    "extra": {
+      "solanaCluster": "devnet",
+      "dappStoreUrl": "https://dappstore.solanamobile.com/app/ecoquest",
+      "PINATA_API_KEY": "$PINATA_API_KEY",
+      "PINATA_SECRET_KEY": "$PINATA_SECRET_KEY",
+      "HELIUS_API_KEY": "$EXPO_PUBLIC_HELIUS_API_KEY",
+      "eas": {
+        "projectId": "1cc5f444-1552-4598-b9aa-fe226fef2150"
+      }
+    },
+    "updates": {
+      "enabled": false
+    },
+    "experiments": {
+      "typedRoutes": false
+    },
+    "owner": "cryptoz"
+  }
+}
