@@ -5,6 +5,8 @@
  * 
  * This file documents the complete EcoQuest Mobile project build.
  * Everything you need to build, test, and deploy is ready.
+ * 
+ * Last Updated: March 9, 2026
  */
 
 console.log(`
@@ -19,27 +21,44 @@ console.log(`
 📊 BUILD STATISTICS
 ═════════════════════════════════════════════════════════════════════
 
-  ✅ Smart Contracts:    4 programs (1,200+ lines of Rust)
-  ✅ Mobile Frontend:    7 screens (2,500+ lines of TypeScript)
-  ✅ Configuration:      10 config files
-  ✅ Deployment Scripts: 4 automation scripts
-  ✅ Documentation:      4 comprehensive guides
-  ✅ Total Files:        100+ files
-  ✅ Total Code:         5,000+ lines
+  ✅ Smart Contracts:    1 Anchor program (1,285 lines of Rust)
+  ✅ Mobile Frontend:    18 screens (25,700+ lines of TypeScript)
+  ✅ Services:           20 service modules
+  ✅ Custom Hooks:       23 hooks
+  ✅ Components:         14 reusable components
+  ✅ Entities:           4 domain directories (11 files)
+  ✅ Features:           3 feature modules (10 files)
+  ✅ Shared Modules:     5 directories (13 files)
+  ✅ Scripts:            7 automation scripts
+  ✅ Total Source Files: 120+ TypeScript/TSX files
+  ✅ Total Project Files: 246+
+  ✅ Total Code:         27,000+ lines
 
 🎯 FEATURES IMPLEMENTED
 ═════════════════════════════════════════════════════════════════════
 
   Core Features:
-  ✅ Wallet Connection (Phantom, Backpack, Seeker)
-  ✅ GPS-based Quest System (Geofence detection)
-  ✅ Camera Integration (Photo proof capture)
+  ✅ Wallet Connection (Phantom, Backpack, Seeker via MWA)
+  ✅ Proof of Physical Activity (GPS + Camera + IPFS + NFT)
+  ✅ GPS-based Quest System (Geofence detection, 50m radius)
+  ✅ Quest Creation (CreateQuestScreen with AR camera)
+  ✅ Camera Integration (AR overlay + photo proof capture)
   ✅ NFT Minting (Quest proof on-chain)
-  ✅ SKR Staking (20% APY with 2x multiplier)
-  ✅ BONK+SKR Combo (Airdrop rewards)
+  ✅ SKR Staking (35% APY with vault system)
+  ✅ Token Swap (SKR ↔ SOL via EcoQuest Internal Pool)
+  ✅ Guardian Pool (Delegated staking)
   ✅ PvP Arena (NFT battles with escrow)
-  ✅ Governance (Proposal voting)
+  ✅ Governance DAO (Proposal voting)
+  ✅ Eco Badge Gallery (Achievement NFTs)
+  ✅ Admin Dashboard (Quest management)
+  ✅ Leaderboard System
   ✅ User Profiles (Stats, badges, leaderboards)
+  ✅ Settings Screen
+  ✅ Anti-Cheat Service (GPS verification)
+  ✅ Gasless Relayer (Transaction sponsorship)
+  ✅ Priority Fee Service
+  ✅ Cloud Sync Service
+  ✅ Offline Quest Caching
 
 🚀 QUICK START (5 MINUTES)
 ═════════════════════════════════════════════════════════════════════
@@ -50,190 +69,190 @@ console.log(`
   2. Deploy Smart Contracts:
      $ bash scripts/deploy-devnet.sh
 
-  3. Start Mobile App:
+  3. Mint SKR Token:
+     $ yarn devnet:mint-skr
+
+  4. Initialize PDAs:
+     $ SKR_MINT=<from_previous_step> yarn devnet:init
+
+  5. Start Mobile App:
      $ cd mobile
-     $ npm start
-     $ (Press 'a' for Android or 'i' for iOS)
+     $ npx expo start --dev-client
 
 📁 PROJECT STRUCTURE
 ═════════════════════════════════════════════════════════════════════
 
   /mobile/                 - React Native App
   ├── src/
-  │   ├── screens/        - 7 main screens
-  │   ├── contexts/       - Wallet & Quest contexts
-  │   ├── services/       - NFT & Staking services
-  │   ├── types/          - TypeScript interfaces
-  │   └── utils/          - Constants & helpers
-  ├── app.json            - Expo configuration
-  └── package.json        - Dependencies (50+)
+  │   ├── App.tsx          - Main entry & navigation
+  │   ├── screens/         - 18 screens
+  │   │   ├── AdminDashboardScreen.tsx
+  │   │   ├── CreateQuestScreen.tsx
+  │   │   ├── DashboardScreen.tsx
+  │   │   ├── EcoBadgeGalleryScreen.tsx
+  │   │   ├── EcoQuestDashboard.tsx
+  │   │   ├── EcoQuestsScreen.tsx
+  │   │   ├── GovernanceScreen.tsx
+  │   │   ├── GuardianPoolScreen.tsx
+  │   │   ├── LeaderboardScreen.tsx
+  │   │   ├── MapScreen.tsx
+  │   │   ├── ProfileScreen.tsx
+  │   │   ├── PvPArenaScreen.tsx
+  │   │   ├── QuestDetailScreen.tsx
+  │   │   ├── SettingsScreen.tsx
+  │   │   ├── SplashScreen.tsx
+  │   │   ├── StakingScreen.tsx
+  │   │   ├── SwapScreen.tsx
+  │   │   └── WalletConnectScreen.tsx
+  │   ├── components/      - 14 reusable components
+  │   │   ├── ARCameraOverlay.tsx
+  │   │   ├── AirdropButton.tsx
+  │   │   ├── AppWalletProvider.tsx
+  │   │   ├── DataStateView.tsx
+  │   │   ├── DevnetBadge.tsx
+  │   │   ├── EcoTree.tsx
+  │   │   ├── ErrorBoundary.tsx
+  │   │   ├── HeroCard.tsx
+  │   │   ├── PendingSyncBadge.tsx
+  │   │   ├── PremiumTabBar.tsx
+  │   │   ├── ShareGrowthCard.tsx
+  │   │   ├── TransactionToast.tsx
+  │   │   ├── TransactionToastProvider.tsx
+  │   │   └── WalletConnectSheet.tsx
+  │   ├── hooks/           - 23 custom hooks
+  │   ├── services/        - 20 service modules
+  │   ├── entities/        - Domain entities (quest, token, user, wallet)
+  │   ├── features/        - Feature modules (proof-of-activity, quest, wallet-auth)
+  │   ├── shared/          - Shared utilities (api, config, idl, lib, ui)
+  │   ├── contexts/        - Wallet & Quest contexts
+  │   ├── types/           - TypeScript interfaces
+  │   └── utils/           - Constants & helpers
+  ├── app.json             - Expo configuration
+  └── package.json         - Dependencies
 
-  /programs/              - Anchor Smart Contracts
+  /programs/               - Anchor Smart Contracts
   └── ecoquest_mobile/
-      ├── src/
-      │   ├── instructions/  - 4 instruction modules
-      │   ├── state/         - Account structures
-      │   └── errors/        - Custom error types
-      └── Cargo.toml
+      └── src/lib.rs       - Single-file program (1,285 lines)
 
-  /scripts/               - Automation & Build Scripts
-  ├── setup.sh           - Full environment setup
-  ├── deploy-devnet.sh   - Deploy to Solana devnet
-  ├── build-apk.sh       - Build Android APK
-  └── test.sh            - Run test suite
+  /scripts/                - Automation & Build Scripts
+  ├── setup.sh             - Full environment setup
+  ├── deploy-devnet.sh     - Deploy to Solana devnet
+  ├── build-apk.sh         - Build Android APK
+  ├── test.sh              - Run test suite
+  ├── check-devnet.ts      - Verify devnet deployment
+  ├── init-devnet.ts       - Initialize all program PDAs
+  └── mint-skr-devnet.ts   - Mint SKR token on devnet
 
 📚 DOCUMENTATION
 ═════════════════════════════════════════════════════════════════════
 
-  📖 README.md              - Main guide (2,000+ words)
+  📖 README.md              - Main guide with architecture diagram
   ⚡ QUICK_START.md          - 5-minute setup guide  
   📋 PROJECT_SUMMARY.md     - Project overview
   ✅ BUILD_VERIFICATION.md   - Build checklist
+  🚀 DEPLOYMENT_SUCCESS.md  - Deployment details
+  🏆 HACKATHON_SUBMISSION.md - Submission info
+  📹 VIDEO_DEMO_SCRIPT.md   - Demo video script
+  🎤 PITCH_DECK.md          - 3-slide pitch deck
 
 🔧 TECH STACK
 ═════════════════════════════════════════════════════════════════════
 
   Frontend:
   • React Native 0.75+
-  • Expo Router
-  • Reanimated (Animations)
-  • TypeScript 5.0+
+  • Expo SDK 51 + Hermes Engine
+  • TypeScript 5.0+ (Strict Mode)
+  • Reanimated v3 (Animations)
+  • Zustand + expo-secure-store (State)
 
   Blockchain:
   • Solana Web3.js
   • Anchor 0.30+
-  • Solana Mobile Stack 2.0
+  • Solana Mobile Stack 2.0 (MWA)
+  • Helius (WebSocket + REST RPC)
+  • Pinata IPFS (Photo proofs)
 
   Development:
   • Babel 7
   • Jest
   • ESLint
   • Anchor CLI
+  • EAS Build
 
 🔐 SECURITY FEATURES
 ═════════════════════════════════════════════════════════════════════
 
   ✅ Private keys never leave user wallet
+  ✅ MWA authorization token caching
+  ✅ Concurrency guards for wallet operations
   ✅ PDA (Program Derived Address) accounts
   ✅ Transaction confirmation prompts
   ✅ Authority validation on all instructions
-  ✅ Comprehensive error handling
-  ✅ No sensitive data in localStorage
+  ✅ Anti-cheat GPS verification service
   ✅ GPS coordinates are hashed
   ✅ Rent exemption for persistent accounts
+  ✅ Gasless relayer for sponsored transactions
+  ✅ Priority fee service for reliable TXs
 
-📱 MOBILE SCREENS
+📱 MOBILE SCREENS (18 Total)
 ═════════════════════════════════════════════════════════════════════
 
-  1. Splash Screen       - App branding & loading
-  2. Wallet Connect      - Phantom/Backpack/Seeker integration
-  3. Map (GPS Quests)    - Location-based quest system
-  4. Staking Hub         - SKR token staking interface
-  5. PvP Arena           - NFT battle system
-  6. Governance          - Proposal voting dashboard
-  7. Profile             - User stats & achievements
-
-🎮 QUEST SYSTEM
-═════════════════════════════════════════════════════════════════════
-
-  Locations (Yogyakarta/Wonogiri, Indonesia):
-  
-  🚰 Progo River (-7.7956, 110.3695)
-     Type: Cleanup | Reward: 50pts | Difficulty: Easy
-
-  🌳 Wonogiri Forest (-8.2065, 111.0378)
-     Type: Plant | Reward: 100pts | Difficulty: Hard
-
-  📸 Nature Reserve (-7.5596, 110.8246)
-     Type: Photo | Reward: 75pts | Difficulty: Medium
-
-  🗑️ Dumping Site (-7.8, 110.45)
-     Type: Report | Reward: 60pts | Difficulty: Medium
+   1. SplashScreen           - App branding & loading
+   2. WalletConnectScreen    - MWA wallet integration
+   3. DashboardScreen        - Main dashboard
+   4. EcoQuestDashboard      - Quest overview dashboard
+   5. EcoQuestsScreen        - Quest listing
+   6. MapScreen              - GPS quest discovery
+   7. QuestDetailScreen      - Individual quest details
+   8. CreateQuestScreen      - Create quests with AR camera
+   9. StakingScreen          - SKR staking vault (35% APY)
+  10. SwapScreen             - SKR ↔ SOL token swap
+  11. GuardianPoolScreen     - Delegated staking
+  12. PvPArenaScreen         - NFT battle system
+  13. GovernanceScreen       - Proposal voting
+  14. EcoBadgeGalleryScreen  - Achievement NFT gallery
+  15. LeaderboardScreen      - Rankings & leaderboard
+  16. ProfileScreen          - User stats & achievements
+  17. SettingsScreen         - App settings
+  18. AdminDashboardScreen   - Admin quest management
 
 💰 TOKENOMICS
 ═════════════════════════════════════════════════════════════════════
 
   SKR Staking:
-  • Base APY: 20%
-  • 2x Multiplier: For 1000+ SKR
-  • Flexible Staking: No lockup period
-  • Minimum: 100 SKR
+  • Base APY: 35%
+  • Guardian Pool delegation
+  • Real on-chain staking via Anchor
 
-  BONK + SKR Combo:
-  • Requirements: 1000+ SKR + 500+ BONK
-  • Bonus: 2x airdrop points
-  • Frequency: Monthly airdrops
+  Token Swap:
+  • SKR ↔ SOL: EcoQuest Internal Pool
+  • Real SPL token transfers on Devnet
 
-✨ SPECIAL FEATURES
+  Quest Rewards:
+  • Complete quests → earn $SKR
+  • NFT proof minting
+  • Eco Badge achievements
+
+⚡ ON-CHAIN (DEVNET)
 ═════════════════════════════════════════════════════════════════════
 
-  ✅ Dark theme with green accents
-  ✅ Smooth animations with Reanimated
-  ✅ Gradient backgrounds
-  ✅ Loading states & error handling
-  ✅ GPS geofence detection
-  ✅ Real-time location tracking
-  ✅ Photo proof validation
-  ✅ NFT minting automation
-  ✅ Escrow-based PvP battles
-  ✅ Governance voting system
-  ✅ Offline quest caching
-
-🧪 TESTING READY
-═════════════════════════════════════════════════════════════════════
-
-  Local Testing:
-  ✅ npm start          - Expo development server
-  ✅ npm run android    - Android emulator
-  ✅ npm run ios        - iOS simulator
-  ✅ npm run type-check - TypeScript validation
-  ✅ npx eslint src     - Linting
-
-  Devnet Testing:
-  ✅ Wallet connection with real accounts
-  ✅ Contract deployment verification
-  ✅ Transaction signing & verification
-  ✅ Account creation & state management
-  ✅ NFT minting & metadata
-  ✅ Token transfers & staking
-
-📦 BUILD FOR PRODUCTION
-═════════════════════════════════════════════════════════════════════
-
-  Android APK:
-  $ bash scripts/build-apk.sh
+  Program:    4RoEXMwC3pvm1NYb8oXvcezJzsvxZmCwMgNUKZxCnju5
+  SKR Token:  2BcXV1FfbTpVGRi6h3ehxjPSHS1fyJDMmrw6DwDKU4ep
   
-  Output: mobile/build/outputs/apk/release/app-release.apk
-  Size: <100MB (optimized)
-  SDK: 33+
-  Architecture: arm64-v8a
-
-🚀 NEXT STEPS
-═════════════════════════════════════════════════════════════════════
-
-  1. Run Setup:
-     bash scripts/setup.sh
-
-  2. Deploy Contracts:
-     bash scripts/deploy-devnet.sh
-
-  3. Test Mobile App:
-     cd mobile && npm start
-
-  4. Explore Code:
-     Review src/ and programs/ folders
-
-  5. Customize:
-     Update colors, locations, amounts in constants.ts
-
-  6. Build APK:
-     bash scripts/build-apk.sh
+  Instructions (14 total):
+  • initialize_quest_program   • mint_nft_proof
+  • initialize_stake_pool      • stake_skr
+  • unstake_skr                • claim_staking_rewards
+  • initialize_arena           • create_duel
+  • accept_duel                • settle_duel
+  • initialize_governance      • create_proposal
+  • vote_on_proposal           • delegate_to_guardian
 
 🔗 USEFUL LINKS
 ═════════════════════════════════════════════════════════════════════
 
-  Solana Devnet Faucet:
-  https://faucet.solana.com
+  Solana Devnet Explorer:
+  https://explorer.solana.com/?cluster=devnet
 
   Phantom Wallet:
   https://phantom.app
@@ -244,128 +263,20 @@ console.log(`
   Expo Documentation:
   https://docs.expo.dev
 
-  Solana Explorer (Devnet):
-  https://explorer.solana.com/?cluster=devnet
-
-📞 SUPPORT & RESOURCES
-═════════════════════════════════════════════════════════════════════
-
-  Documentation:
-  • README.md (Comprehensive guide)
-  • QUICK_START.md (Fast setup)
-  • PROJECT_SUMMARY.md (Overview)
-  • BUILD_VERIFICATION.md (Checklist)
-
-  Code Comments:
-  • Inline documentation
-  • Function descriptions
-  • Architecture notes
-
-  Community:
-  • GitHub Issues
-  • Solana Discord
-  • Stack Exchange
-
-✅ VERIFICATION CHECKLIST
-═════════════════════════════════════════════════════════════════════
-
-  [ ] Read README.md thoroughly
-  [ ] Run setup.sh without errors
-  [ ] Build smart contracts (anchor build)
-  [ ] Deploy to devnet (deploy-devnet.sh)
-  [ ] Start mobile app (npm start)
-  [ ] Test wallet connection
-  [ ] Complete a quest flow
-  [ ] Stake SKR tokens
-  [ ] Vote on proposal
-  [ ] Check profile stats
-
-🎯 DEVELOPMENT TIPS
-═════════════════════════════════════════════════════════════════════
-
-  Hot Reload:
-  • Mobile app auto-reloads on file save
-  • No need to restart Expo server
-
-  Debug Smart Contracts:
-  • Use msg!() macro for logging
-  • Check transaction history on explorer
-  • Use anchor test for unit tests
-
-  Check Transactions:
-  • solana confirmed-transaction-history
-  • explorer.solana.com (devnet)
-  • Check account rent exemption
-
-  Monitor Balance:
-  • solana balance (check devnet SOL)
-  • solana airdrop 1 (request more SOL)
-
-🎓 LEARNING OUTCOMES
-═════════════════════════════════════════════════════════════════════
-
-  By studying this codebase, you'll learn:
-
-  ✅ React Native best practices
-  ✅ Solana program architecture
-  ✅ Anchor framework deep dive
-  ✅ TypeScript strict mode
-  ✅ Mobile wallet integration
-  ✅ Smart contract design
-  ✅ Token economics
-  ✅ GPS geofencing
-  ✅ NFT minting
-  ✅ On-chain governance
-
-💡 CUSTOMIZATION IDEAS
-═════════════════════════════════════════════════════════════════════
-
-  Easy Customizations:
-  • Change quest locations (QuestContext.tsx)
-  • Update token amounts (constants.ts)
-  • Modify colors/theme (DISPLAY_CONFIG)
-  • Add new screens
-  • Integrate real IPFS
-  • Add email notifications
-  • Create admin dashboard
-
-🌍 ENVIRONMENTAL IMPACT
-═════════════════════════════════════════════════════════════════════
-
-  EcoQuest Mobile incentivizes:
-  
-  • Plastic cleanup 🗑️
-  • Tree planting 🌳
-  • Biodiversity documentation 📸
-  • Illegal dumping reports 🚨
-  • Community engagement 👥
-  • Sustainable gaming 🎮
-
-  Every quest completed = Real environmental benefit!
-
-🏆 PROJECT HIGHLIGHTS
-═════════════════════════════════════════════════════════════════════
-
-  ✨ Production-ready code
-  ✨ Comprehensive documentation
-  ✨ Security best practices
-  ✨ Mobile-optimized UX
-  ✨ Scalable architecture
-  ✨ Easy customization
-  ✨ Devnet ready
-  ✨ dApp Store compatible
+  Solana Devnet Faucet:
+  https://faucet.solana.com
 
 ═════════════════════════════════════════════════════════════════════
 
-            🌍 EcoQuest Mobile is Ready for Launch! 🚀
+             🌍 EcoQuest Mobile is Ready for Launch! 🚀
 
-                    Status: ✅ COMPLETE MVP
-              Documentation: ✅ COMPREHENSIVE
-              Code Quality: ⭐⭐⭐⭐⭐
-              Security: ✅ BEST PRACTICES
-              Performance: ✅ OPTIMIZED
+                     Status: ✅ COMPLETE MVP
+               Documentation: ✅ COMPREHENSIVE
+               Code Quality: ⭐⭐⭐⭐⭐
+               Security: ✅ BEST PRACTICES
+               Performance: ✅ OPTIMIZED
 
-                    Start Building Today!
+                     Start Building Today!
 
 ═════════════════════════════════════════════════════════════════════
 
@@ -373,15 +284,15 @@ console.log(`
    bash scripts/setup.sh && bash scripts/deploy-devnet.sh
 
 🎮 Quick Run Command:
-   cd mobile && npm start
+   cd mobile && npx expo start --dev-client
 
 📖 Read Documentation:
    cat README.md
 
 ═════════════════════════════════════════════════════════════════════
 
-Version: 1.0.0 MVP
-Build Date: February 16, 2026
+Version: 2.0.0
+Build Date: March 9, 2026
 Status: Production Ready ✅
 
         Made with ❤️ for Planet Earth

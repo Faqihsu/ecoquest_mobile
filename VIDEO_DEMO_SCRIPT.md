@@ -6,11 +6,11 @@
 |---|---|---|
 | 0:00–0:15 | **Hook** | Problem statement + app opening |
 | 0:15–0:35 | **Connect** | Wallet connect via MWA |
-| 0:35–1:00 | **Quest** | GPS verify + Camera proof |
-| 1:00–1:15 | **Stake** | Stake SKR → show TX |
+| 0:35–1:00 | **Quest** | GPS verify + AR Camera proof |
+| 1:00–1:15 | **Stake** | Stake SKR (35% APY) → show TX |
 | 1:15–1:30 | **Swap** | SKR → SOL swap → show TX |
 | 1:30–1:45 | **Governance + PvP** | Vote + Create duel |
-| 1:45–2:00 | **Close** | Vision + call to action |
+| 1:45–2:00 | **Close** | Eco Badges + Vision + call to action |
 
 ---
 
@@ -45,13 +45,13 @@
 
 **Narration:**
 > "Here's where EcoQuest is different. Every quest requires **physical proof**.
-> GPS verifies you're at the location. The camera captures evidence.
+> GPS verifies you're at the location. Our AR camera captures evidence.
 > Your photo is pinned to IPFS and minted as an NFT — **forever on Solana**."
 
 **Visual:**
 1. Tap a quest on the map
-2. GPS validation animation (green checkmark)
-3. Camera opens → Take photo of cleanup/planting
+2. GPS validation animation (green checkmark) — powered by AntiCheatService
+3. AR Camera overlay opens → Take photo of cleanup/planting
 4. Upload progress → "Quest Complete! +500 SKR"
 5. Show Solana Explorer TX
 
@@ -61,6 +61,7 @@
 
 **Narration:**
 > "Earned SKR tokens? Stake them at 35% APY.
+> Delegate to Guardian Pool for enhanced rewards.
 > Real Anchor smart contract. Real yield. All verifiable on-chain."
 
 **Visual:**
@@ -109,7 +110,7 @@
 > 
 > EcoQuest. Prove your impact. Earn your future."
 
-**Visual:** Architecture diagram → Logo → Website/GitHub URL
+**Visual:** Architecture diagram → Eco Badge Gallery → Logo → GitHub URL
 
 ---
 

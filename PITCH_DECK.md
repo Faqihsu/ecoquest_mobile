@@ -20,9 +20,9 @@ Berikut adalah konsep 3-slide deck (Pitch Deck) yang padat, jelas, dan memikat j
 **Visual Suggestion:** A clean architecture diagram showing: User Action ➡️ Hardware GPS + Camera Proof ➡️ Solana Smart Contract ➡️ $SKR Tokens Earned.
 
 **Key Points (Bullet points):**
-- **Hardware-Backed Anti-Cheat:** We leverage Solana Seeker's hardware GPS and native camera to generate immutable Proof of Physical Activity. No more fake locations or photos.
+- **Hardware-Backed Anti-Cheat:** We leverage Solana Seeker's hardware GPS and native AR camera to generate immutable Proof of Physical Activity. No more fake locations or photos.
 - **Instant Rewards on Solana:** Verifications trigger instant minting of $SKR tokens via Anchor Smart Contracts. 400ms finality means immediate gratification.
-- **Sustainable Tokenomics:** Users can Stake $SKR for APY, use it for DAO Governance, or battle in PvP Arenas to create token sinks and sustained demand.
+- **Sustainable Tokenomics:** Users can Stake $SKR for 35% APY, delegate to Guardian Pool, use it for DAO Governance, battle in PvP Arenas, earn Eco Badges, or swap SKR ↔ SOL — creating multiple token sinks and sustained demand.
 
 ---
 
@@ -31,7 +31,7 @@ Berikut adalah konsep 3-slide deck (Pitch Deck) yang padat, jelas, dan memikat j
 **Visual Suggestion:** 3 mobile screenshots of the app UI side-by-side (Dashboard, Camera/GPS Verification, Staking/Wallet).
 
 **Key Points (Bullet points):**
-- **Tech Stack Check:** React Native (Expo) + Anchor (Rust) + Helius + Mobile Wallet Adapter (Phantom/Backpack) + Pinata IPFS. Fully functional on Devnet.
+- **Tech Stack Check:** React Native (Expo) + Anchor (Rust) + Helius + Mobile Wallet Adapter v2.0 (Phantom/Backpack/Seeker) + Pinata IPFS. 18 screens, 20 services, 23 hooks. Fully functional on Devnet.
 - **Go-to-Market:** Partnering with local NGOs for initial seed quests. Gamified referral system via our PvP arena.
 - **The Vision:** To become the fundamental layer for decentralized environmental verification. We turn every smartphone into a verifiable node for planetary regeneration. 
 

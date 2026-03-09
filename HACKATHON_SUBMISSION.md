@@ -34,11 +34,16 @@ Real Action → GPS Verify → Camera Proof → IPFS Upload → On-Chain NFT →
 Every step is cryptographically verified. Every token earned represents real impact.
 
 🔧 CORE FEATURES (All On-Chain on Devnet)
-• Proof of Physical Activity — Hardware GPS + camera proof + IPFS storage + NFT minting
+• Proof of Physical Activity — Hardware GPS + AR camera proof + IPFS storage + NFT minting
 • $SKR Token Economy — Earn, stake (35% APY), and swap tokens
 • Token Swap — SKR ↔ SOL via EcoQuest Internal Pool (real SPL transfers)
+• Guardian Pool — Delegated staking for enhanced rewards
 • Governance DAO — Community votes on quest locations and reward rates
 • PvP Arena — Stake SKR in impact duels, settled by smart contracts
+• Eco Badge Gallery — Achievement NFTs for milestones
+• Leaderboard — Rankings and social sharing
+• 18 Screens — Complete mobile experience with premium UI
+• 20 Services + 23 Hooks — Production-grade architecture
 • Daily Quest Cooldown — One quest per day to maintain quality
 
 📱 WHY SOLANA SEEKER?
@@ -95,14 +100,9 @@ Mobile — Solana Mobile Ecosystem
 
 ## ⚠️ YANG MASIH PERLU
 
-1. **GitHub Repo** — Git belum ada remote! Jalankan:
-   ```bash
-   cd ~/ecoquest_mobile
-   git init
-   git add .
-   git commit -m "EcoQuest v1.0 — Monolith Hackathon Submission"
-   git remote add origin https://github.com/YOUR_USERNAME/ecoquest_mobile.git
-   git push -u origin main
+1. **GitHub Repo** — Sudah dipush:
+   ```
+   https://github.com/Faqihsu/ecoquest_mobile
    ```
 
 2. **Demo Video (2 menit)** — Rekam dari HP pakai screen recorder:

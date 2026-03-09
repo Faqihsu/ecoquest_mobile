@@ -32,6 +32,7 @@ Every step is cryptographically verified. Every token earned represents real imp
 | **SKR Token** | `2BcXV1FfbTpVGRi6h3ehxjPSHS1fyJDMmrw6DwDKU4ep` | ✅ 10M Minted |
 | **Governance PDA** | On-chain | ✅ Initialized |
 | **Stake Pool PDA** | On-chain (35% APY) | ✅ Initialized |
+| **Guardian Pool** | On-chain | ✅ Initialized |
 | **PvP Arena PDA** | On-chain | ✅ Initialized |
 
 > All transactions are real — verifiable on [Solana Explorer (Devnet)](https://explorer.solana.com/?cluster=devnet)
@@ -61,13 +62,17 @@ graph TD
     classDef mobile fill:#000000,stroke:#14F195,stroke-width:2px,color:#fff;
     classDef storage fill:#3b82f6,stroke:#000,stroke-width:2px,color:#fff;
     
-    subgraph MobileApp["📱 React Native (Expo)"]
-        UI["UI Screens (Staking, Quests, PvP)"]:::mobile
-        MWA["Mobile Wallet Adapter"]:::mobile
-        GPS["Seeker Hardware GPS"]:::mobile
-        Cam["Native Camera Proof"]:::mobile
+    subgraph MobileApp["📱 React Native (Expo) — 18 Screens"]
+        UI["UI Screens (Dashboard, Quests, Staking, Swap, PvP, Governance)"]:::mobile
+        MWA["Mobile Wallet Adapter v2.0"]:::mobile
+        GPS["Seeker Hardware GPS + AntiCheat"]:::mobile
+        Cam["AR Camera Proof"]:::mobile
+        Hooks["23 Custom Hooks"]:::mobile
+        Services["20 Service Modules"]:::mobile
         
         UI --> MWA
+        UI --> Hooks
+        UI --> Services
         UI --> GPS
         UI --> Cam
     end
@@ -101,12 +106,20 @@ graph TD
 ### 🚫 Anti-Cheat GPS Verification
 - Hardware-grade GPS validation via Seeker's location services
 - Geofenced quest activation (50m radius enforcement)
+- Dedicated `AntiCheatService` for GPS verification
 - Camera proof → IPFS → on-chain NFT minting
+
+### 📸 Proof of Physical Activity
+- AR Camera Overlay for quest verification
+- GPS + Camera + IPFS + NFT pipeline
+- Quest creation via `CreateQuestScreen`
+- Daily quest cooldown system
 
 ### 💎 $SKR Token Economy
 - **Earn**: Complete environmental quests → receive $SKR
 - **Stake**: Lock $SKR in the Stake Pool → earn 35% APY
 - **Swap**: Exchange SKR ↔ SOL via EcoQuest Internal Pool
+- **Eco Badges**: Achievement NFTs via `EcoBadgeGalleryScreen`
 
 ### 🏛️ Governance DAO
 - Create and vote on proposals (new quest locations, reward rates)
@@ -128,6 +141,19 @@ graph TD
 - **SKR ↔ SOL**: EcoQuest Internal Pool (real SPL Token transfers on Devnet)
 - All swaps are real on-chain transactions signed via MWA
 
+### 🎖️ Leaderboard & Badges
+- Global leaderboard rankings
+- Eco Badge minting for achievements
+- Share Growth card for social sharing
+
+### 🔧 Advanced Infrastructure
+- Gasless relayer for sponsored transactions
+- Priority fee service for reliable TX confirmation
+- Cloud sync service for cross-device data
+- Offline sync with pending sync badge
+- Helius WebSocket for real-time updates
+- Transaction toast notifications
+
 ---
 
 ## 📱 Why Solana Seeker?
@@ -148,11 +174,12 @@ graph TD
 |---|---|
 | **Mobile** | React Native (Expo SDK 51) + Hermes Engine |
 | **Smart Contract** | Anchor (Rust) on Solana SVM |
-| **Wallet** | Mobile Wallet Adapter (MWA) |
+| **Wallet** | Mobile Wallet Adapter (MWA) v2.0 |
 | **Storage** | Pinata IPFS (photo proofs) |
 | **RPC** | Helius (WebSocket + REST) |
 | **Swap** | EcoQuest Internal Pool |
-| **Real-time** | WebSocket (PvP Arena) |
+| **State** | Zustand + expo-secure-store |
+| **Real-time** | Helius WebSocket + PvP WebSocket |
 
 ---
 
@@ -225,6 +252,21 @@ See [VIDEO_DEMO_SCRIPT.md](./VIDEO_DEMO_SCRIPT.md) for the 2-minute pitch breakd
 
 ---
 
+## 📊 Codebase Statistics
+
+| Metric | Count |
+|---|---|
+| **Screens** | 18 |
+| **Services** | 20 |
+| **Custom Hooks** | 23 |
+| **Components** | 14 |
+| **TypeScript LOC** | ~25,700+ |
+| **Rust LOC** | ~1,285 |
+| **Total Source Files** | 120+ TS/TSX |
+| **Automation Scripts** | 7 |
+
+---
+
 ## 📜 License
 
-MIT License © 2025 EcoQuest Team. Built for Monolith — Solana Mobile Hackathon.
+MIT License © 2026 EcoQuest Team. Built for Monolith — Solana Mobile Hackathon.

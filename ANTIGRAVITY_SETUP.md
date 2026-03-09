@@ -70,15 +70,20 @@ Antigravity sudah diatur untuk memahami:
 
 ### Mobile App (React Native + TypeScript)
 
-- `mobile/src/screens/` - UI screens
-- `mobile/src/services/` - Business logic
-- `mobile/src/components/` - Reusable components
-- Solana wallet integration
-- NFT & Staking features
+- `mobile/src/screens/` - 18 UI screens
+- `mobile/src/services/` - 20 service modules
+- `mobile/src/hooks/` - 23 custom hooks
+- `mobile/src/components/` - 14 reusable components
+- `mobile/src/entities/` - Domain entities (quest, token, user, wallet)
+- `mobile/src/features/` - Feature modules (proof-of-activity, quest, wallet-auth)
+- `mobile/src/shared/` - Shared utilities (api, config, idl, lib, ui)
+- `mobile/src/contexts/` - Wallet & Quest contexts
+- Solana MWA wallet integration
+- NFT, Staking, Swap, PvP, Governance features
 
 ### Smart Contracts (Rust)
 
-- `programs/ecoquest_mobile/src/` - Anchor program
+- `programs/ecoquest_mobile/src/` - Anchor program (1,285 lines, 14 instructions)
 - Blockchain logic
 
 ### Features Antigravity Siap Membantu
@@ -86,9 +91,11 @@ Antigravity sudah diatur untuk memahami:
 ✅ Implementasi fitur baru  
 ✅ Bug fixing & debugging  
 ✅ Code refactoring  
-✅ Integrasi Solana/NFT  
+✅ Integrasi Solana/NFT/MWA  
 ✅ UI/UX improvements  
-✅ Testing & documentation
+✅ Testing & documentation  
+✅ Service & hook development  
+✅ Smart contract modifications
 
 ---
 
